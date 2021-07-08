@@ -1,0 +1,34 @@
+import UIKit
+
+/*var words = ["mkxjk", "kmxju", "kmdxj", "huxoi", "xcxf", "lxmnh"] // Array with some words
+var wordByLetters = [String]() // Array for each word by letter
+var newWords = [String]() // Array for words that contains "x" in the third position (index: 2)
+
+for word in words { // For each word in words array
+    for letter in word { // For each letter in wordByLetters array
+        wordByLetters.append(String(letter)) // Append all the letters of present word to wordByLetters array
+    }
+    let index = wordByLetters.enumerated().filter {$0.element.contains("x")}.map{$0.offset} // Check if by letter if there is an "x" in the wordByLetters array
+    if index == [2] { // If index of index equals 2...
+        newWords.append(word) // ...word appends to newWords array
+    }
+    wordByLetters.removeAll() // Remove all the elements in wordByLetters array
+}
+
+print(newWords)*/
+
+
+var words = ["mkxjk", "kmxju", "kmdxj", "huxoi", "xcxf", "lxmnh"]
+var wordByLetters = [String]()
+var newWords = [String]()
+
+for word in words {
+    for letter in word {
+        wordByLetters.append(String(letter))
+    }
+    if wordByLetters.firstIndex(of: "x") == 2 {
+        newWords.append(word)
+    }
+    wordByLetters.removeAll()
+}
+print(newWords)
