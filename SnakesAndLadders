@@ -1,0 +1,24 @@
+import UIKit
+
+let finalSquare = 25
+var board = [Int](repeating: 0, count: finalSquare + 1)
+
+board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
+board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
+
+var square = 0
+var diceRoll = 0
+while square < finalSquare {
+  // бросок кубика
+  diceRoll += 1
+  if diceRoll == 7 { diceRoll = 1 }
+  // начать ходить на выпавшее количество шагов
+  square += diceRoll
+  if square < board.count {
+    // если мы все еще на поле, идти вверх или вниз по змеям или лестницам
+    square += board[square]
+  }
+}
+print("Game over!")
+
+print(board)
