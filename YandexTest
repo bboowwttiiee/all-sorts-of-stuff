@@ -1,0 +1,19 @@
+import UIKit
+
+var incorrectArray = ["str3", "1smth", "bla2bla", "5smth", "4smth"] //массив с пулом рандомных строк для примера
+var correctArray: [String] = [] //пустой массив для строк без чисел и расположенных по порядку
+var symbol = 1 //символ, который мы ищем по массиву (увеличивается на 1 в конце каждой итерации цикла for)
+
+while !incorrectArray.isEmpty { //пробегаемся по старому массиву пока в нем не закончатся элементы
+    for i in incorrectArray { // пробегаемся по старому массиву в поисках symbol
+        let symbolStr = String(symbol)
+        if i.contains(symbolStr) { //проверяем, содержит ли строка symbol
+            let stringWithoutDigit = (i.components(separatedBy: CharacterSet.decimalDigits)).joined(separator: "") //удаляем из найденной строки цифру
+            correctArray.append(stringWithoutDigit) //ставим найденную строку в новый массив
+            incorrectArray.remove(at: incorrectArray.firstIndex(of: i)!) //удаляем найденную строку из старого массива
+            symbol += 1 //увеличиваем symbol на 1
+        }
+    }
+}
+
+print(correctArray)
