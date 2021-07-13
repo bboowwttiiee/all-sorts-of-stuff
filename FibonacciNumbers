@@ -1,0 +1,4 @@
+let fibonacci = sequence(first: (0, 1), next: { ($1, $0 + $1) })
+                .prefix(20).map{$0.0}
+                .filter {$0 % 2 == 0 && $0 < 4000}
+print (fibonacci)
