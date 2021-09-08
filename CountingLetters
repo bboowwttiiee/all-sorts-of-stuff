@@ -1,0 +1,8 @@
+import UIKit
+
+var sequence = "ИгорьМихаилИлья"
+
+var letterCount = sequence.reduce(into: [:]) { counts, letter in
+    counts[letter, default: 0] += 1}
+
+print(letterCount)
