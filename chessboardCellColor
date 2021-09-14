@@ -1,0 +1,21 @@
+import UIKit
+
+func whatCellColol(horizontal: Int, vertical: String) -> String {
+    let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h"]
+    let verDigits = 0
+    if alphabet.contains(vertical) {
+        alphabet.firstIndex(of: vertical)! + 1
+    }
+    let hor = horizontal % 2
+    let ver = verDigits % 2
+    
+    if horizontal <= 8 || alphabet.contains(vertical) {
+        if (hor == 1 && ver == 1) || (hor == 0 && ver == 0) {
+            return "The color of the cell is black"
+        } else if (hor == 1 && ver == 0) || (hor == 0 && ver == 1) {
+            return "The color of the cell is white"
+        }
+    }
+    
+    return "There is no such cell on the board"
+}
